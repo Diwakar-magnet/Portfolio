@@ -122,45 +122,31 @@
      <div class="container py-5">
       <div class="row" data-aos="fade-up" data-aos-delay="300">
           <div class="col-md-12">
-              <form onsubmit="sendEmail(); reset(); return false;">
-                  <div class="form-group row">
-                      <div class="col-sm-6">
-                          <input type="text" class="form-control" placeholder="Your Name" required>
-                      </div>
-                          <div class="col-sm-6">
-                          <input type="text" class="form-control" placeholder="Your Email" required>
-                      </div>
-                      <div class="col-sm-12">
-                          <input type="number" class="form-control" placeholder="Your Phont Number" required>
-                      </div>
-                  </div>
-                  <div class="form-group row">
-                      <div class="col-xs-12 col-md-12">
-                          <textarea type="text" class="form-control" placeholder="Your Message" rows="6" required></textarea>
-                      </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Alright Submit it</button>
-              </form>
+            <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
           </div>
       </div>
      </div>
 </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail(){
-            Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "guptadiwakar79@gmail.com",
-    Password : "71DA3F1E7234369E7685275AECF084058660",
-    To : 'guptdiwakar79@gmail.com',
-    From : document.getElementById("email").value,
-    Subject : "New contact enquiry",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
-        }
-    </script>
+
                 
 
 <!-- Contact section Ended -->
